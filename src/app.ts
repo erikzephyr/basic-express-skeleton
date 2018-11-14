@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import * as path from 'path';
 
 // Load environment variables from .env file, where API keys and passwords are configured
-dotenv.config({ path: '.env.example' });
 
 // Controllers (route handlers)
 import * as homeController from './app/controllers/home.controller';
@@ -23,7 +22,6 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, '../app/views'));
 app.set('view engine', 'pug');
-app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
